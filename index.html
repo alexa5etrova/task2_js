@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задание 2</title>
+</head>
+
+<body>
+	<script>
+		// 1. Удалите из массива дубликаты: const arr = [1, 2, 3, 5, 1, 6, 2, 5, 6, 7];
+		const arr = [1, 2, 3, 5, 1, 6, 2, 5, 6, 7];
+		const newArr = [];
+		arr.forEach((item => {
+			if (!newArr.includes(item)) {
+				newArr.push(item)
+			};
+		}))
+		console.log("Массив без дубликатов: " + newArr);
+
+
+		// 2. Объедините 2 объекта в один: const obj1 = { id: 1, name: ‘userName’ } и const obj2 = { id: 1, password: ‘qwerty’ }
+		const obj1 = { id: 1, name: "userName" }
+		const obj2 = { id: 1, password: "qwerty" }
+		const mergedObj = { ...obj1, ...obj2 }
+		console.log(mergedObj);
+
+
+		// 3. Сократите объявление функции в одну строку, используя новый синтаксис ES6:
+		// const add = function (x, y) {
+		// 	return x + y
+		// }
+		const add = function (x, y) {
+			return x + y
+		}
+
+		const add2 = (x, y) => x + y;
+
+
+		// 		4. Напишите функцию, с помощью которой можно будет выполнять различные действия с задержкой Функция, которую нужно реализовать:
+		// 		const sleep = ms => { ... } 
+		// Её использование для выполнения действия с задержкой 5 секунд
+		// 		sleep(5000).then(() => {
+		// 			console.log('Выполнилось через 5 секунд!');
+		// 		});
+
+		const sleep = ms => {
+			return new Promise((resolve, reject) => setTimeout(resolve, ms));
+		}
+		sleep(5000).then(() => {
+			console.log('Выполнилось через 5 секунд!');
+		})
+
+
+	</script>
+
+</body>
+
+</html>
